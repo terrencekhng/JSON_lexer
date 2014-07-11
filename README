@@ -1,4 +1,4 @@
 JSON_lexer
 ==============================================================================
 
-A lightweight lexical analyzer for JSON, which helps generate tuples for parser, first part of jsonar.
+A lightweight lexical analyzer for JSON, which helps for parser, first part of jsonar.

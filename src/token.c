@@ -10,7 +10,7 @@
  */
 
 void json_token_inspect(json_token_t *tok) {
-	printf(" inspect===> ", json_token_type_string(tok->type));
+	printf(" inspect===> %s", json_token_type_string(tok->type));
 
 	printf("\n");
 }

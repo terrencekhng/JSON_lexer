@@ -168,7 +168,9 @@ scan:
 	switch(c = next) {
 	case ' ':
 	case '\t': goto scan;
-	case '{': return token(LBRACE);
+	case '{':
+             printf("[%c, %s]\n", json_token_type_string(self->tok.type));
+             return token(LBRACE);
 	case '}': return token(RBRACE);
 	case '[': return token(LBRACK);
 	case ']': return token(RBRACK);
@@ -184,6 +186,7 @@ scan:
 		token(EOS);
 		return 0;
 	default:
+    if (isalpha(c) || '_' == c) return scan_ident(self, c);
 		error("illegal character");
 		return 0;
 	}
